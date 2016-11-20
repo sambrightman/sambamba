@@ -34,7 +34,7 @@ install:
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make sambamba-ldmd2-64 && ./.run_tests.sh; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker exec linux bash -c "cd /build; make sambamba-ldmd2-64 && ./.run_tests.sh"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker exec linux bash -c "cd /build; make sambamba-ldmd2-debug && ./.run_tests.sh"; fi
 
 after_success:
   - tar cjvf sambamba_${TRAVIS_OS_NAME}.tar.bz2 ./build/sambamba
